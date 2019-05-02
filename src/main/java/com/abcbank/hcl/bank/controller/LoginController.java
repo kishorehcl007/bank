@@ -19,7 +19,7 @@ public class LoginController {
 	LoginServiceImpl loginService;
 	
 	@GetMapping("/userlogin")
-	public ResponseEntity<String> getMyPets(@RequestBody LoginReqDTO loginDto){
+	public ResponseEntity<String> validateLogin(@RequestBody LoginReqDTO loginDto){
 		String message = loginService.validateLogin(loginDto);
 		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
