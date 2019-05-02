@@ -1,4 +1,4 @@
-package com.abcbank.hcl.bank.Config;
+package com.abcbank.hcl.bank.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

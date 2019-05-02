@@ -49,7 +49,7 @@ public class CustomerRegistrationRequest implements Serializable {
 	public String getPassWord() {
 		return customerPassword;
 	}
-	public void setPassWord(String passWord) {
+	public void setPassWord(String customerPassword) {
 		this.customerPassword = customerPassword;
 	}
 	public String getAccountBranch() {
