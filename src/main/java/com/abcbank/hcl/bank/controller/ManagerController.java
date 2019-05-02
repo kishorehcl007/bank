@@ -17,7 +17,7 @@ public class ManagerController {
 				
 					//validation goes here
 					// user exist throw error from service layer 
-					if(customerService.registratingCoustmer(customerRegistrationRequest)) {
+					if(customerService.registerCoustmer(customerRegistrationRequest)) {
 						
 						return "user created sucessully";
 					}
@@ -31,7 +31,7 @@ public class ManagerController {
 		//charan
 		public Customer searchCustomerByAccountName(String customerName) {
 			
-					return CustomerService.getcustomerByName(customerName);
+					return customerService.getcustomerByName(customerName);
 			//end of method searchCustomerByAccountName
 		}
 		
@@ -43,7 +43,7 @@ public class ManagerController {
 		public Customer searchCustomerByAccountNumber(Long accountNumber) {
 			
 			
-				return CustomerService.getCustomerByAccountNumber(accountNumber);
+				return customerService.getCustomerByAccountNumber(accountNumber);
 			//end of method SerachCustomerByAccountNumner
 		}
 		
