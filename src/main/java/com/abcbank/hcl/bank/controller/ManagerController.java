@@ -2,25 +2,24 @@ package com.abcbank.hcl.bank.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.abcbank.hcl.bank.dto.CoustmerRegistrationRequest;
+import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.service.CustomerService;
-import com.abcbank.hcl.bank.service.CustomerServiceImpl.CustomerServiceImpl;
 
 public class ManagerController {
 
 			@Autowired
-			CustomerServiceImpl customerService;
+			CustomerService customerService;
 			
 	//creatating a coustmer
 	//charan
-		public void registerCoustmer(CoustmerRegistrationRequest coustmerRegistrationRequest) {
+		public String registerCoustmer(CustomerRegistrationRequest customerRegistrationRequest) {
 				
 					//validation goes here
 					// user exist throw error from service layer 
-					if(customerService.registratingCoustmer(coustmerRegistrationRequest)) {
+					if(customerService.registratingCoustmer(customerRegistrationRequest)) {
 						
-						return ResponseEntity<T>("User Created Sucessfully",Https.ok);
+						return "user created sucessully";
 					}
 			
 					//end of method register Customer

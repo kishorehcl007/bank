@@ -11,7 +11,7 @@ public interface ManagerService {
 
 	Customer getCustomerByAccountNumber(Long accountNumber);
 
-	boolean registratingCoustmer(CustomerRegistrationRequest coustmerRegistrationRequest);
+	boolean registerCustomer(CustomerRegistrationRequest coustmerRegistrationRequest);
 	
 	
 	

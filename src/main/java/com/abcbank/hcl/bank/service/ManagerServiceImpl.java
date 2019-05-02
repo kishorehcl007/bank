@@ -20,7 +20,7 @@ public class ManagerServiceImpl implements ManagerService{
 	
 	//method to create user and save user to repo
 	//charan
-	public void registratingCoustmer(CustomerRegistrationRequest customerRegistrationRequest) {
+	public boolean registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
 			
 		
 			
@@ -44,7 +44,7 @@ public class ManagerServiceImpl implements ManagerService{
 				
 				customerRepository.save(currentCustomer);
 				
-				retun true;
+				return true;
 		//end of method registrationCoustmer
 	}
 
