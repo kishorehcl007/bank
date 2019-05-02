@@ -1,10 +1,10 @@
 package com.abcbank.hcl.bank.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity
 public class Employee {
@@ -13,6 +13,7 @@ public class Employee {
 	 private int empId;
 	 private String empName;
 	 private String passWord;
+	 private String location;
 	 public int getEmpId() {
 		return empId;
 	}
@@ -32,11 +33,12 @@ public class Employee {
 		this.passWord = passWord;
 	}
 	public String getLocation() {
-		return Location;
+		return location;
 	}
 	public void setLocation(String location) {
-		Location = location;
+		location = location;
 	}
-	private String Location;
+
+
 
 }
