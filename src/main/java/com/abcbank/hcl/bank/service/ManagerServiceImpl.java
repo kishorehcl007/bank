@@ -23,25 +23,28 @@ public class ManagerServiceImpl implements ManagerService{
 	public void registratingCoustmer(CustomerRegistrationRequest customerRegistrationRequest) {
 			
 		
+			
 				//create a new user
 				Customer currentCustomer = new Customer();
 				
-				currentCustomer.setCoustmerName(customerRegistrationRequest.getCoustmerName());
+				currentCustomer.setCustomerName(customerRegistrationRequest.getCoustmerName());
 				currentCustomer.setAccountAadhar(customerRegistrationRequest.getAccountAadhar());
 				currentCustomer.setCustomerPassword(customerRegistrationRequest.getCustomerPassword());
 				currentCustomer.setAccountBranch(customerRegistrationRequest.getAccountBranch());
-				currentCustomer.setCoustmerCity(customerRegistrationRequest.getCoustmerCity());
+				currentCustomer.setCustomerCity(customerRegistrationRequest.getCoustmerCity());
 				
 				//zero for new customer
 				currentCustomer.setAccountBalance(0);
-				currentCustomer.setCoustmerEmail(customerRegistrationRequest.getCoustmerEmail());
-				currentCustomer.setCoustmerPhNum(currentCustomer.getCoustmerPhNum());
+				currentCustomer.setCustomerEmail(customerRegistrationRequest.getCoustmerEmail());
+				currentCustomer.setCustomerPhNum(currentCustomer.getCoustmerPhNum());
 				currentCustomer.setAccountType(customerRegistrationRequest.getAccountType());
 				
 				
 				
 				
 				customerRepository.save(currentCustomer);
+				
+				retun true;
 		//end of method registrationCoustmer
 	}
 
@@ -59,6 +62,15 @@ public class ManagerServiceImpl implements ManagerService{
 		return customerRepository.findByCustomerAccount(accountNumber);
 	}
 	
+	
+	public boolean doesCustomerExist(String customerName) {
+		Customer validCustomer = customerRepository.findByCustomerName(customerName);
+		if(customerName.isEquals(validCustomer.getCustomerName())) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 
 }

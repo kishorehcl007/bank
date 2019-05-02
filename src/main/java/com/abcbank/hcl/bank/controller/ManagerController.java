@@ -2,7 +2,7 @@ package com.abcbank.hcl.bank.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.abcbank.hcl.bank.dto.CoustmerRegistrationRequest;
+import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.service.CustomerServiceImpl.CustomerServiceImpl;
 import com.abcbank.hcl.bank.service.ManagerService;
@@ -19,11 +19,20 @@ public class ManagerController {
 			
 	//creatating a coustmer
 	//charan
-		public void registerCoustmer(CoustmerRegistrationRequest coustmerRegistrationRequest) {
+		public String registerCoustmer(CustomerRegistrationRequest cusotmerRegistrationRequest) {
 				
 					//validation goes here
 					// user exist throw error from service layer 
-					if(managerService.registratingCoustmer(coustmerRegistrationRequest)) {
+			
+				String customerName = CustomerRegistrationRequest.getCustomerName();
+				
+				
+				 if(customerExist(customerName)) {
+					 return "Customer already exist";
+				 }else
+					{
+					 
+					managerService.registratingCoustmer(coustmerRegistrationRequest)) {
 						
 						//return ResponseEntity<T>("User Created Sucessfully",Https.ok);
 							return "user created sucessfully";
@@ -34,6 +43,9 @@ public class ManagerController {
 		
 		
 		
+
+
+
 		//creating method to seach by account name
 		//charan
 		public Customer searchCustomerByAccountName(String customerName) {
