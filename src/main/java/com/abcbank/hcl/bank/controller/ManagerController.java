@@ -5,11 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.service.CustomerService;
+import com.abcbank.hcl.bank.service.ManagerService;
 
 public class ManagerController {
 
 			@Autowired
 			CustomerService customerService;
+			
+			@Autowired
+			ManagerService managerService;
 			
 	//creatating a coustmer
 	//charan
@@ -17,11 +21,11 @@ public class ManagerController {
 				
 					//validation goes here
 					// user exist throw error from service layer 
-					if(customerService.registerCoustmer(customerRegistrationRequest)) {
-						
+					if(managerService.registerCustomer(customerRegistrationRequest)) 
 						return "user created sucessully";
-					}
-			
+					else
+						return "error while creating user";
+					
 					//end of method register Customer
 		}
 		
