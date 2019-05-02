@@ -4,9 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.abcbank.hcl.bank.dto.CoustmerRegistrationRequest;
 import com.abcbank.hcl.bank.model.Customer;
-import com.abcbank.hcl.bank.service.CustomerService;
-import com.abcbank.hcl.bank.service.ManagerService;
 import com.abcbank.hcl.bank.service.CustomerServiceImpl.CustomerServiceImpl;
+import com.abcbank.hcl.bank.service.ManagerService;
 
 public class ManagerController {
 
