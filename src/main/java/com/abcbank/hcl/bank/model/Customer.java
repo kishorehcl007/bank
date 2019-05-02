@@ -17,30 +17,28 @@ public class Customer {
 	private String customerPassword;
 	private String accountBranch;
 	private Long accountAadhar; 
-	private String coustmerCity;
-	private String coustmerEmail;
-	private Long coustmerPhNum;
+	private String customerCity;
+	private String customerEmail;
+	private Long customerPhNum;
 	private double accountBalance;
 	private String accountType;
-	
-	
 	public Long getAccountNumber() {
 		return accountNumber;
 	}
 	public void setAccountNumber(Long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	public String getCoustmerName() {
+	public String getCustomerName() {
 		return customerName;
 	}
-	public void setCoustmerName(String coustmerName) {
-		this.customerName = coustmerName;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
-	public String getPassword() {
+	public String getCustomerPassword() {
 		return customerPassword;
 	}
-	public void setCustomerPassword(String password) {
-		this.customerPassword = password;
+	public void setCustomerPassword(String customerPassword) {
+		this.customerPassword = customerPassword;
 	}
 	public String getAccountBranch() {
 		return accountBranch;
@@ -54,23 +52,23 @@ public class Customer {
 	public void setAccountAadhar(Long accountAadhar) {
 		this.accountAadhar = accountAadhar;
 	}
-	public String getCoustmerCity() {
-		return coustmerCity;
+	public String getCustomerCity() {
+		return customerCity;
 	}
-	public void setCoustmerCity(String coustmerCity) {
-		this.coustmerCity = coustmerCity;
+	public void setCustomerCity(String customerCity) {
+		this.customerCity = customerCity;
 	}
-	public String getCoustmerEmail() {
-		return coustmerEmail;
+	public String getCustomerEmail() {
+		return customerEmail;
 	}
-	public void setCoustmerEmail(String coustmerEmail) {
-		this.coustmerEmail = coustmerEmail;
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
 	}
-	public Long getCoustmerPhNum() {
-		return coustmerPhNum;
+	public Long getCustomerPhNum() {
+		return customerPhNum;
 	}
-	public void setCoustmerPhNum(Long coustmerPhNum) {
-		this.coustmerPhNum = coustmerPhNum;
+	public void setCustomerPhNum(Long customerPhNum) {
+		this.customerPhNum = customerPhNum;
 	}
 	public double getAccountBalance() {
 		return accountBalance;
@@ -84,5 +82,5 @@ public class Customer {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-
+	
 }

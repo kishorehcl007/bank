@@ -1,6 +1,7 @@
 package com.abcbank.hcl.bank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.abcbank.hcl.bank.dto.LoginReqDTO;
 import com.abcbank.hcl.bank.model.Customer;
@@ -8,6 +9,7 @@ import com.abcbank.hcl.bank.model.Employee;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
 import com.abcbank.hcl.bank.repository.EmployeeRepository;
 
+@Service
 public class LoginServiceImpl implements LoginService{
 	@Autowired
 	CustomerRepository custRepo;

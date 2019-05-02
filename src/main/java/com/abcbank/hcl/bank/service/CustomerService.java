@@ -1,6 +1,5 @@
 package com.abcbank.hcl.bank.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
@@ -13,5 +12,8 @@ import com.abcbank.hcl.bank.repository.CustomerRepository;
 public interface CustomerService {
 	
 	public Customer updateCustomerDetails(CustomerRegistrationRequest cust);	
+
+	 Customer getcustomerByName(String customerName);
+	 Customer getCustomerByAccountNumber(Long accountNumber);
 
 }
