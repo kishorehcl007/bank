@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.abcbank.hcl.bank.model.Employee;
 
+
 @Repository
 public interface EmployeeRepository  extends JpaRepository<Employee,Long>{
 	

@@ -7,6 +7,9 @@ import com.abcbank.hcl.bank.model.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
+
+	Customer findByCustomerName(Long cusAccNam);
+
 	Customer findByCustomerName(String customerName);
 
 	Customer findByCustomerAccount(Long accountNumber);

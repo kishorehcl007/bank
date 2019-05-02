@@ -12,13 +12,25 @@ import com.abcbank.hcl.bank.model.Transaction;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
 import com.abcbank.hcl.bank.repository.TranscationRepository;
 
-@Service
-public class CustomerServiceImpl implements CustomerService{
-
+public class CustomerServiceImpl implements CustomerService {
+ @Autowired
+ CustomerRepository customerRepositroy;
+ 
+ 
+	@Override
+	public Customer updateCustomerDetails(CustomerRegistrationRequest customer) {
+	
+		Customer currentCust =null;
+	    Long accNo=	customer.getAccountNumber();
+		currentCust = customerRepositroy.findById(accNo).get();
+		currentCust.setCoustmerEmail(customer.getCoustmerEmail());
+		currentCust.setCoustmerPhNum(customer.getCoustmerPhNum());
+		customerRepositroy.save(currentCust);
+		return currentCust;	
+	}
 
 	
-	@Autowired
-	CustomerRepository customerRepository;
+	
 	
 
 	@Autowired
@@ -47,15 +59,15 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	
+
+
 	
 	  public Customer getcustomerByName(String customerName) {
-		// TODO Auto-generated method stub
 		Customer responseCustomer = customerRepository.findByCustomerName(customerName);
 		return responseCustomer;
 	}
 
 	  public Customer getCustomerByAccountNumber(Long accountNumber) {
-		// TODO Auto-generated method stub
 		Customer responeCustomer = customerRepository.findByAccountNumber(accountNumber);
 		return responeCustomer;
 	}

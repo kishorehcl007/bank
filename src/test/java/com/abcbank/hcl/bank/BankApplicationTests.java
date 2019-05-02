@@ -11,12 +11,13 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-
+import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.LoginReqDTO;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.model.Employee;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
 import com.abcbank.hcl.bank.repository.EmployeeRepository;
+import com.abcbank.hcl.bank.service.CustomerServiceImpl;
 import com.abcbank.hcl.bank.service.LoginServiceImpl;
 
 
@@ -25,6 +26,7 @@ public class BankApplicationTests {
 
 	@InjectMocks
 	LoginServiceImpl loginService;
+	CustomerServiceImpl customerService;
 	
 	@Mock
 	EmployeeRepository empRepo;
@@ -68,5 +70,18 @@ public class BankApplicationTests {
 	  String message1 = "User validated successfully";
 	  Assert.assertEquals(message1,message);	 
 	 }
+	  @Test 
+	   public void testupdateCustomerDetails() 
+	   { 
+	   Customer custmodel2 = new Customer();
+	   CustomerRegistrationRequest cust=new CustomerRegistrationRequest();
+	   
+	   custmodel2.setCoustmerEmail("ram@gmail.com");
+	   custmodel2.setCoustmerPhNum(1111111111L);
+	   Mockito.when(custRepo.save(custModel)).thenReturn(custmodel2);
+	   String message = customerService.updateCustomerDetails(cust);
+	   String message1 = "customer details updated successfully";
+	   Assert.assertEquals(message1,message);
+	   }
 
 }
