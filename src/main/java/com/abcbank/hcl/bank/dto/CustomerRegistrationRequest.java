@@ -1,29 +1,23 @@
-package com.abcbank.hcl.bank.model;
+package com.abcbank.hcl.bank.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
-public class Customer {
+import java.io.Serializable;
+
+public class CustomerRegistrationRequest implements Serializable {
 	
 	
-	
-   @Id
-   @GeneratedValue(strategy=GenerationType.IDENTITY)
+	//This is auto generated
 	private Long accountNumber;
-	private String customerName; 
+	private String customerName;
 	private String customerPassword;
 	private String accountBranch;
-	private Long accountAadhar; 
+	private Long accountAadhar;
 	private String coustmerCity;
 	private String coustmerEmail;
 	private Long coustmerPhNum;
+	//set the inital limit to == 0
 	private double accountBalance;
 	private String accountType;
-	
-	
 	public Long getAccountNumber() {
 		return accountNumber;
 	}
@@ -36,11 +30,11 @@ public class Customer {
 	public void setCoustmerName(String coustmerName) {
 		this.customerName = coustmerName;
 	}
-	public String getPassword() {
+	public String getPassWord() {
 		return customerPassword;
 	}
-	public void setCustomerPassword(String password) {
-		this.customerPassword = password;
+	public void setPassWord(String passWord) {
+		this.customerPassword = customerPassword;
 	}
 	public String getAccountBranch() {
 		return accountBranch;
@@ -84,5 +78,9 @@ public class Customer {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
+	
+	
+	
+	
 
 }

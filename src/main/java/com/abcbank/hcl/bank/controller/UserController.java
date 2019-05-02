@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.model.*;
 
 import com.abcbank.hcl.bank.service.CustomerService;
@@ -22,8 +24,10 @@ public class UserController {
 	CustomerService customerService;
 	
 	@PutMapping("/updateCustomer")
-	public void updateCustomerDetails(String customerEmail,Long customerPhoneNum,Long customerAccountName) {
-		customerService.updateCustomerDetails(customerEmail,customerPhoneNum,customerAccountName);
+	public ResponseEntity<String> updateCustomerDetails(@RequestBody CustomerRegistrationRequest customer) {
+		Customer message=customerService.updateCustomerDetails(customer);
+		return new ResponseEntity<String>("customer details updated successfully", HttpStatus.OK);
+
 	}
 	
 	

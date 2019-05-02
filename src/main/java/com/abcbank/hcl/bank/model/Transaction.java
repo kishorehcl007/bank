@@ -2,7 +2,6 @@ package com.abcbank.hcl.bank.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +12,20 @@ public class Transaction {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)		
 		private Long transcationId;
+		private Long accountNumber;
+		private String transactionType;
+		public Long getAccountNumber() {
+			return accountNumber;
+		}
+		public void setAccountNumber(Long accountNumber) {
+			this.accountNumber = accountNumber;
+		}
+		public String getTransactionType() {
+			return transactionType;
+		}
+		public void setTransactionType(String transactionType) {
+			this.transactionType = transactionType;
+		}
 		private LocalDate transcationDate;
 		private double transcationAmount;
 		private String transcationDesc;
