@@ -36,7 +36,7 @@ public class ManagerServiceImpl implements ManagerService{
 				//zero for new customer
 				currentCustomer.setAccountBalance(0);
 				currentCustomer.setCustomerEmail(customerRegistrationRequest.getCoustmerEmail());
-				currentCustomer.setCustomerPhNum(currentCustomer.getCoustmerPhNum());
+				currentCustomer.setCustomerPhNum(currentCustomer.getCustomerPhNum());
 				currentCustomer.setAccountType(customerRegistrationRequest.getAccountType());
 				
 				
@@ -65,7 +65,7 @@ public class ManagerServiceImpl implements ManagerService{
 	
 	public boolean doesCustomerExist(String customerName) {
 		Customer validCustomer = customerRepository.findByCustomerName(customerName);
-		if(customerName.isEquals(validCustomer.getCustomerName())) {
+		if(customerName.equalsIgnoreCase(validCustomer.getCustomerName())) {
 			return true;
 		}else {
 			return false;
