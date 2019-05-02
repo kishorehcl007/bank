@@ -10,14 +10,14 @@ import javax.persistence.Id;
 public class Employee {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 private int empId;
+	 private Long empId;
 	 private String empName;
 	 private String passWord;
 	 private String location;
-	 public int getEmpId() {
+	 public long getEmpId() {
 		return empId;
 	}
-	public void setEmpId(int empId) {
+	public void setEmpId(long empId) {
 		this.empId = empId;
 	}
 	public String getEmpName() {
