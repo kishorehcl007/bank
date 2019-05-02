@@ -20,7 +20,7 @@ public class ManagerController {
 			
 	//creatating a coustmer
 	//charan
-		public void registerCoustmer(CoustmerRegistrationRequest coustmerRegistrationRequest) {
+		public void registerCoustmer(CoustmerRegistrationRequest customerRegistrationRequest) {
 				
 					//validation goes here
 					// user exist throw error from service layer 
