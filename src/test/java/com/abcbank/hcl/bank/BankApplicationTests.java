@@ -11,8 +11,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.LoginReqDTO;
+import com.abcbank.hcl.bank.dto.UpdateRequest;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.model.Employee;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
@@ -27,6 +27,8 @@ public class BankApplicationTests {
 
 	@InjectMocks
 	LoginServiceImpl loginService;
+	
+	@InjectMocks
 	CustomerServiceImpl customerService;
 	
 	@Mock
@@ -73,16 +75,29 @@ public class BankApplicationTests {
 	 }
 	  @Test 
 	   public void testupdateCustomerDetails() 
-	   { 
-	   Customer custmodel2 = new Customer();
-	   CustomerRegistrationRequest cust=new CustomerRegistrationRequest();
+	{ 
+		  Customer custmodel2 = new Customer();
+		 
 	   
 	   custmodel2.setCustomerEmail("ram@gmail.com");
 	   custmodel2.setCustomerPhNum(1111111111L);
-	   Mockito.when(custRepo.save(custModel)).thenReturn(custmodel2);
-	   String message = customerService.updateCustomerDetails(cust);
-	   String message1 = "customer details updated successfully";
-	   Assert.assertEquals(message1,message);
+	   
+		  
+		  UpdateRequest updateRequest = new UpdateRequest();
+		  updateRequest.setAccountNumber(123);
+		  updateRequest.setCustomerEmail("shipra@gmail.com");
+		  updateRequest.setPhoneNumber(9876654321L);
+	   
+	   Mockito.when(custRepo.findByAccountNumber(12345L)).thenReturn(custmodel2);
+	   
+	
+	   customerService.updateCustomerDetails(updateRequest);
+	   
+	   Assert.assertSame("shipra@gmail.com", updateRequest.getCustomerEmail());
+	   
+
+	   
+	   
 	   }
 
 }

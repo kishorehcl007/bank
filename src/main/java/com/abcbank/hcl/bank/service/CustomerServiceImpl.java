@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
+import com.abcbank.hcl.bank.dto.UpdateRequest;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.model.Transaction;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
@@ -26,13 +27,18 @@ public class CustomerServiceImpl implements CustomerService {
  
  
 	@Override
-	public String updateCustomerDetails(CustomerRegistrationRequest customer) {
+	public String updateCustomerDetails(UpdateRequest updateRequest) {
 	
-		Customer currentCust =null;
-	    Long accNo=	customer.getAccountNumber();
-		currentCust = customerRepository.findById(accNo).get();
-		currentCust.setCustomerEmail(customer.getCoustmerEmail());
-		currentCust.setCustomerPhNum(customer.getCoustmerPhNum());
+		Long accNo = updateRequest.getAccountNumber();
+		Customer currentCust = customerRepository.findByAccountNumber(accNo);
+
+		
+		
+		
+		currentCust.setCustomerEmail(updateRequest.getCustomerEmail());
+		currentCust.setCustomerPhNum(updateRequest.getPhoneNumber());
+		
+		
 		customerRepository.save(currentCust);
 		return "customer details updated successfully";	
 	}
@@ -77,6 +83,11 @@ public class CustomerServiceImpl implements CustomerService {
 		Customer responeCustomer = customerRepository.findByAccountNumber(accountNumber);
 		return responeCustomer;
 	}
-	
+
+
+
+
+
+
 }
 
