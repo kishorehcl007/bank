@@ -1,22 +1,21 @@
-//package com.abcbank.hcl.bank.service;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//
-//import com.abcbank.hcl.bank.dto.TransReqDTO;
-//import com.abcbank.hcl.bank.model.Customer;
-//import com.abcbank.hcl.bank.model.Transaction;
-//import com.abcbank.hcl.bank.repository.CustomerRepository;
-//import com.abcbank.hcl.bank.repository.TranscationRepository;
-//
-//public class CustomerServiceImpl implements CustomerService {
-// @Autowired
-// CustomerRepository customerRepositroy;
-// 
-// 
+package com.abcbank.hcl.bank.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abcbank.hcl.bank.model.Customer;
+import com.abcbank.hcl.bank.repository.CustomerRepository;
+
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+ @Autowired
+ CustomerRepository customerRepositroy;
+ 
+ 
 //	@Override
 //	public Customer updateCustomerDetails(CustomerRegistrationRequest customer) {
 //	
@@ -57,20 +56,20 @@
 //		return list;
 //	}
 //
-//
-//	
-//
-//
-//	
-//	  public Customer getcustomerByName(String customerName) {
-//		Customer responseCustomer = customerRepository.findByCustomerName(customerName);
-//		return responseCustomer;
-//	}
-//
-//	  public Customer getCustomerByAccountNumber(Long accountNumber) {
-//		Customer responeCustomer = customerRepository.findByAccountNumber(accountNumber);
-//		return responeCustomer;
-//	}
-//	
-//}
-//
+
+	
+
+
+	
+	  public Customer getcustomerByName(String customerName) {
+		Customer responseCustomer = customerRepositroy.findByCustomerName(customerName);
+		return responseCustomer;
+	}
+
+	  public Customer getCustomerByAccountNumber(Long accountNumber) {
+		Customer responeCustomer = customerRepositroy.findByAccountNumber(accountNumber);
+		return responeCustomer;
+	}
+	
+}
+
