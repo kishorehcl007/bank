@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.model.Transaction;
@@ -14,7 +14,7 @@ import com.abcbank.hcl.bank.repository.TranscationRepository;
 
 public class CustomerServiceImpl implements CustomerService {
  @Autowired
- CustomerRepository customerRepositroy;
+ CustomerRepository customerRepository;
  
  
 	@Override
@@ -22,10 +22,10 @@ public class CustomerServiceImpl implements CustomerService {
 	
 		Customer currentCust =null;
 	    Long accNo=	customer.getAccountNumber();
-		currentCust = customerRepositroy.findById(accNo).get();
-		currentCust.setCoustmerEmail(customer.getCoustmerEmail());
-		currentCust.setCoustmerPhNum(customer.getCoustmerPhNum());
-		customerRepositroy.save(currentCust);
+		currentCust = customerRepository.findById(accNo).get();
+		currentCust.setCustomerEmail(customer.getCoustmerEmail());
+		currentCust.setCustomerPhNum(customer.getCoustmerPhNum());
+		customerRepository.save(currentCust);
 		return currentCust;	
 	}
 

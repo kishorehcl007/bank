@@ -22,13 +22,13 @@ public class CustomerServiceImplTest {
 		
 		
 		Customer customer=new Customer();
-		customer.setCoustmerEmail("Ram@gmail.com");
-		customer.setCoustmerPhNum(123456787);
+		customer.setCustomerEmail("Ram@gmail.com");
+		customer.setCustomerPhNum(123456787);
 		
 	}
 	@Test
 	public void testupdateCustomerDetails() {
-		Mockito.when(customerRepository.findByCustomerName(cusAccNam);
+		Mockito.when(customerRepository.findByCustomerName(cusAccNam));
 		
 		
 		
