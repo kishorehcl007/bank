@@ -70,6 +70,12 @@
     			<version>2.9.2</version>
 		</dependency>
 	</dependencies>
+<distributionManagement>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://35.154.25.173:8081/repository/squad3/</url>
+		</snapshotRepository>
+</distributionManagement>
 
 	<build>
 		<plugins>
