@@ -32,14 +32,14 @@ public class CustomerServiceImpl implements CustomerService {
 		Long accNo = updateRequest.getAccountNumber();
 		Customer currentCust = customerRepository.findByAccountNumber(accNo);
 
+		//currentCust.setCustomerEmail(updateRequest.getCustomerEmail());
+		//currentCust.setCustomerPhNum(updateRequest.getPhoneNumber());
 		
 		
-		
-		currentCust.setCustomerEmail(updateRequest.getCustomerEmail());
-		currentCust.setCustomerPhNum(updateRequest.getPhoneNumber());
-		
-		
-		customerRepository.save(currentCust);
+			customerRepository.updatePhoneNumber(accNo,updateRequest.getPhoneNumber());
+			customerRepository.updateEmail(accNo,updateRequest.getCustomerEmail());
+			
+			//customerRepository.save(currentCust);
 		return "customer details updated successfully";	
 	}
 
