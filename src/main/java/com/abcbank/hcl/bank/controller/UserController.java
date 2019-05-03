@@ -15,6 +15,7 @@ import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
 import com.abcbank.hcl.bank.model.Customer;
 import com.abcbank.hcl.bank.service.CustomerService;
+
 @RestController
 @RequestMapping("/customer")
 public class UserController {
@@ -22,19 +23,15 @@ public class UserController {
 	
 	@Autowired
 	CustomerService customerService1;
-@GetMapping("/transacationDetails")
+	
+	@GetMapping("/transacationDetails")
 	public List<TransReqDTO> getTranscationDetails(@PathVariable Long accountNumber){
 		
        List<TransReqDTO> transListResult=customerService1.getTranscationDetails(accountNumber);		
 	   return transListResult;
 		
 	}	
-	}
 
-	
-	@Autowired
-	CustomerService customerService;
-	
 	@PutMapping("/updateCustomer")
 	public ResponseEntity<String> updateCustomerDetails(@RequestBody CustomerRegistrationRequest customer) {
 		Customer message=customerService1.updateCustomerDetails(customer);

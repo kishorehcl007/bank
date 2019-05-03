@@ -12,7 +12,6 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
 	Customer findByCustomerName(String customerName);
 
-
 	Customer findByAccountNumber(Long accountNumber);
 
 }

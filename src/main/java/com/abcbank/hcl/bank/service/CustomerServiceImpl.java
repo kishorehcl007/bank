@@ -4,17 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
 import com.abcbank.hcl.bank.model.Customer;
+import com.abcbank.hcl.bank.model.Transaction;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
+import com.abcbank.hcl.bank.repository.TranscationRepository;
 
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
- @Autowired
+ 
+	
+	@Autowired
  CustomerRepository customerRepository;
+
+ @Autowired
+	TranscationRepository transactionRepository;
  
  
 	@Override
@@ -33,8 +41,6 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	
 
-	@Autowired
-	TranscationRepository transactionRepository;
 
 	@Override
 	public List<TransReqDTO> getTranscationDetails(Long accountNumber) {
@@ -63,12 +69,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 	
 	  public Customer getcustomerByName(String customerName) {
-		Customer responseCustomer = customerRepositroy.findByCustomerName(customerName);
+		Customer responseCustomer = customerRepository.findByCustomerName(customerName);
 		return responseCustomer;
 	}
 
 	  public Customer getCustomerByAccountNumber(Long accountNumber) {
-		Customer responeCustomer = customerRepositroy.findByAccountNumber(accountNumber);
+		Customer responeCustomer = customerRepository.findByAccountNumber(accountNumber);
 		return responeCustomer;
 	}
 	
