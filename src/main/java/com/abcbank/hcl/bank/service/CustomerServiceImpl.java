@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
 import com.abcbank.hcl.bank.model.Customer;
-import com.abcbank.hcl.bank.model.Transaction;
 import com.abcbank.hcl.bank.repository.CustomerRepository;
-import com.abcbank.hcl.bank.repository.TranscationRepository;
 
+
+@Service
 public class CustomerServiceImpl implements CustomerService {
  @Autowired
  CustomerRepository customerRepository;
@@ -63,12 +63,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 	
 	  public Customer getcustomerByName(String customerName) {
-		Customer responseCustomer = customerRepository.findByCustomerName(customerName);
+		Customer responseCustomer = customerRepositroy.findByCustomerName(customerName);
 		return responseCustomer;
 	}
 
 	  public Customer getCustomerByAccountNumber(Long accountNumber) {
-		Customer responeCustomer = customerRepository.findByAccountNumber(accountNumber);
+		Customer responeCustomer = customerRepositroy.findByAccountNumber(accountNumber);
 		return responeCustomer;
 	}
 	

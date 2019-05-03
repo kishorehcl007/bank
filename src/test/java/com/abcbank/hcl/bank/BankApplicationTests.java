@@ -21,7 +21,7 @@ import com.abcbank.hcl.bank.service.CustomerServiceImpl;
 import com.abcbank.hcl.bank.service.LoginServiceImpl;
 
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.Silent:class)
 public class BankApplicationTests {
 
 	@InjectMocks

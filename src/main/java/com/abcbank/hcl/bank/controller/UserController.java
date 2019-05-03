@@ -29,6 +29,9 @@ public class UserController {
 	   return transListResult;
 		
 	}	
+	}
+
+	
 	@Autowired
 	CustomerService customerService;
 	

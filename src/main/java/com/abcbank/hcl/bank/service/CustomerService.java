@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
+import org.springframework.stereotype.Service;
+
+import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.model.Customer;
 
 
 
 public interface CustomerService {
-	
 	public Customer updateCustomerDetails(CustomerRegistrationRequest cust);	
 
 	public  Customer getcustomerByName(String customerName);
