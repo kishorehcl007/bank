@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abcbank.hcl.bank.dto.CustomerRegistrationRequest;
 import com.abcbank.hcl.bank.dto.TransReqDTO;
-import com.abcbank.hcl.bank.model.Customer;
+import com.abcbank.hcl.bank.dto.UpdateRequest;
 import com.abcbank.hcl.bank.service.CustomerService;
 
 @RestController
@@ -33,8 +32,8 @@ public class UserController {
 	}	
 
 	@PutMapping("/updateCustomer")
-	public ResponseEntity<String> updateCustomerDetails(@RequestBody CustomerRegistrationRequest customer) {
-		String message=customerService1.updateCustomerDetails(customer);
+	public ResponseEntity<String> updateCustomerDetails(@RequestBody UpdateRequest updateRequest) {
+		String message=customerService1.updateCustomerDetails(updateRequest);
 		return new ResponseEntity<String>(message, HttpStatus.OK);
 
 	}
