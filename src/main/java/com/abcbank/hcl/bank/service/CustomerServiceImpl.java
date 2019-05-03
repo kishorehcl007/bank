@@ -16,46 +16,46 @@ public class CustomerServiceImpl implements CustomerService {
  CustomerRepository customerRepositroy;
  
  
-//	@Override
-//	public Customer updateCustomerDetails(CustomerRegistrationRequest customer) {
-//	
-//		Customer currentCust =null;
-//	    Long accNo=	customer.getAccountNumber();
-//		currentCust = customerRepositroy.findById(accNo).get();
-//		currentCust.setCoustmerEmail(customer.getCoustmerEmail());
-//		currentCust.setCoustmerPhNum(customer.getCoustmerPhNum());
-//		customerRepositroy.save(currentCust);
-//		return currentCust;	
-//	}
-//
-//	
-//	
-//	
-//
-//	@Autowired
-//	TranscationRepository transactionRepository;
-//
-//	@Override
-//	public List<TransReqDTO> getTranscationDetails(Long accountNumber) {
-//		// TODO Auto-generated method stub
-//		
-//		List<TransReqDTO> list=new ArrayList<>();
-//		List<Transaction> TransListResult=transactionRepository.findByAccountNumber(accountNumber);
-//		
-//		for(Transaction trans:TransListResult)
-//		{
-//			TransReqDTO transReqDto=new TransReqDTO();
-//			transReqDto.setAccountNumber(trans.getAccountNumber());
-//			transReqDto.setTransactionType(trans.getTransactionType());
-//			transReqDto.setTranscationAmount(trans.getTranscationAmount());
-//			transReqDto.setTranscationDate(trans.getTranscationDate());
-//			transReqDto.setTranscationDesc(trans.getTranscationDesc());
-//			transReqDto.setTranscationId(trans.getTranscationId());			
-//			list.add(transReqDto);
-//		}
-//		return list;
-//	}
-//
+	@Override
+	public Customer updateCustomerDetails(CustomerRegistrationRequest customer) {
+	
+		Customer currentCust =null;
+	    Long accNo=	customer.getAccountNumber();
+		currentCust = customerRepositroy.findById(accNo).get();
+		currentCust.setCoustmerEmail(customer.getCoustmerEmail());
+		currentCust.setCoustmerPhNum(customer.getCoustmerPhNum());
+		customerRepositroy.save(currentCust);
+		return currentCust;	
+	}
+
+	
+	
+	
+
+	@Autowired
+	TranscationRepository transactionRepository;
+
+	@Override
+	public List<TransReqDTO> getTranscationDetails(Long accountNumber) {
+		// TODO Auto-generated method stub
+		
+		List<TransReqDTO> list=new ArrayList<>();
+		List<Transaction> TransListResult=transactionRepository.findByAccountNumber(accountNumber);
+		
+		for(Transaction trans:TransListResult)
+		{
+			TransReqDTO transReqDto=new TransReqDTO();
+			transReqDto.setAccountNumber(trans.getAccountNumber());
+			transReqDto.setTransactionType(trans.getTransactionType());
+			transReqDto.setTranscationAmount(trans.getTranscationAmount());
+			transReqDto.setTranscationDate(trans.getTranscationDate());
+			transReqDto.setTranscationDesc(trans.getTranscationDesc());
+			transReqDto.setTranscationId(trans.getTranscationId());			
+			list.add(transReqDto);
+		}
+		return list;
+	}
+
 
 	
 

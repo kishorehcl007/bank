@@ -11,12 +11,11 @@ import com.abcbank.hcl.bank.repository.CustomerRepository;
 
 
 public interface CustomerService {
-//	
-//	public Customer updateCustomerDetails(CustomerRegistrationRequest cust);	
+	public Customer updateCustomerDetails(CustomerRegistrationRequest cust);	
 
 	 Customer getcustomerByName(String customerName);
 	 Customer getCustomerByAccountNumber(Long accountNumber);
-//
-//		public List<TransReqDTO> getTranscationDetails(Long accountNumber);
+
+		public List<TransReqDTO> getTranscationDetails(Long accountNumber);
 
 }
