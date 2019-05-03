@@ -34,8 +34,8 @@ public class UserController {
 
 	@PutMapping("/updateCustomer")
 	public ResponseEntity<String> updateCustomerDetails(@RequestBody CustomerRegistrationRequest customer) {
-		Customer message=customerService1.updateCustomerDetails(customer);
-		return new ResponseEntity<String>("customer details updated successfully", HttpStatus.OK);
+		String message=customerService1.updateCustomerDetails(customer);
+		return new ResponseEntity<String>(message, HttpStatus.OK);
 
 	}
 	

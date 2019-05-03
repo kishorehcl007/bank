@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
  
  
 	@Override
-	public Customer updateCustomerDetails(CustomerRegistrationRequest customer) {
+	public String updateCustomerDetails(CustomerRegistrationRequest customer) {
 	
 		Customer currentCust =null;
 	    Long accNo=	customer.getAccountNumber();
@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 		currentCust.setCustomerEmail(customer.getCoustmerEmail());
 		currentCust.setCustomerPhNum(customer.getCoustmerPhNum());
 		customerRepository.save(currentCust);
-		return currentCust;	
+		return "customer details updated successfully";	
 	}
 
 	
