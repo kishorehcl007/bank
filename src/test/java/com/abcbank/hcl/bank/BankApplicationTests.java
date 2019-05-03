@@ -76,8 +76,8 @@ public class BankApplicationTests {
 	   Customer custmodel2 = new Customer();
 	   CustomerRegistrationRequest cust=new CustomerRegistrationRequest();
 	   
-	   custmodel2.setCoustmerEmail("ram@gmail.com");
-	   custmodel2.setCoustmerPhNum(1111111111L);
+	   custmodel2.setCustomerEmail("ram@gmail.com");
+	   custmodel2.setCustomerPhNum(1111111111L);
 	   Mockito.when(custRepo.save(custModel)).thenReturn(custmodel2);
 	   String message = customerService.updateCustomerDetails(cust);
 	   String message1 = "customer details updated successfully";

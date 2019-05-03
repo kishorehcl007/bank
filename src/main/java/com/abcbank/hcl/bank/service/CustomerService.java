@@ -12,7 +12,7 @@ import com.abcbank.hcl.bank.model.Customer;
 
 
 public interface CustomerService {
-	public Customer updateCustomerDetails(CustomerRegistrationRequest cust);	
+	public String updateCustomerDetails(CustomerRegistrationRequest cust);	
 
 	public  Customer getcustomerByName(String customerName);
 	 public Customer getCustomerByAccountNumber(Long accountNumber);
