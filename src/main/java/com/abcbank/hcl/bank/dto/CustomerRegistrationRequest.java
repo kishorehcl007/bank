@@ -11,6 +11,7 @@ public class CustomerRegistrationRequest implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	//This is auto generated
+	
 	private Long accountNumber;
 	private String customerName;
 	private String customerPassword;
@@ -20,6 +21,8 @@ public class CustomerRegistrationRequest implements Serializable {
 	private String coustmerEmail;
 	private Long coustmerPhNum;
 	//set the inital limit to == 0
+	//
+
 	private double accountBalance;
 	public String getCustomerName() {
 		return customerName;
