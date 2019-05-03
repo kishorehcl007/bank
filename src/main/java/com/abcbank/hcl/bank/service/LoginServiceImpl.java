@@ -23,21 +23,28 @@ public class LoginServiceImpl implements LoginService{
 		Customer cust= new Customer();
 		Employee emp= new Employee();
 		Long userID = loginDTO.getUserID();
+		String passwd = loginDTO.getUserPassword();	
 		if (loginDTO.getUserType().equalsIgnoreCase("customer")) {
-		cust = custRepo.findById(userID).get();
-			if(cust.getAccountNumber()==loginDTO.getUserID()) {		
-			message ="User validated successfully";
-			}
+		   cust = custRepo.findById(userID).orElse(null);
+		   if(cust != null) {
+			   	if(cust.getCustomerPassword().equalsIgnoreCase(passwd)) 
+			   		message ="User validated successfully";
+				else
+					message ="Incorrect password for user";
+		   }else message ="Invalid User";
+			
 		}
+		
 		if (loginDTO.getUserType().equalsIgnoreCase("admin")) {
-			emp = empRepo.findById(userID).get();
-			if(emp.getEmpId()==loginDTO.getUserID()) {		
-				message ="User validated successfully";
-			}
+			emp = empRepo.findById(userID).orElse(null);
+			if(emp != null) {
+					if(emp.getPassWord().equalsIgnoreCase(passwd)) 	
+						message ="Admin validated successfully";
+					else 
+						message ="Incorrect password for admin";
+			}else message ="Invalid Admin";
 	
-		}else {
-			message ="Invalid User";
-		}
+		}		
 		return message;
 	}
 
